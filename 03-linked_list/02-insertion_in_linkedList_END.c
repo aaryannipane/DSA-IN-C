@@ -63,9 +63,7 @@ void insert(){
         while(temp->next != NULL){
             temp = temp->next;
         }
-
         temp->next = new;
         printf("\nData Inserted\n\n");
     }
-
 }

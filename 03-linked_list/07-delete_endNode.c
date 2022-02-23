@@ -49,8 +49,6 @@ int main(){
             break;
         }
     }
-    
-    
 }
 
 node *getnode(){

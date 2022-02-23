@@ -23,7 +23,13 @@ bool search(BstNode*, int);
 // to delete node in tree
 BstNode* delete(BstNode*, int);
 
+// function to m=find minimum value in tree
 BstNode *findMin(BstNode*);
+
+// function to find max number of 2
+int max(int, int);
+// function to find height of a tree
+int findHeight(BstNode*);
 
 
 int main(){
@@ -31,6 +37,7 @@ int main(){
     // root pointer to first node (root node)
     BstNode *root = NULL;
     int data;
+    int height;
 
     int choice;
     while (1)
@@ -41,7 +48,8 @@ int main(){
         printf("2 -> traverse\n");
         printf("3 -> search\n");
         printf("4 -> delete\n");
-        printf("5 -> exit\n");
+        printf("5 -> Height of tree\n");
+        printf("6 -> exit\n");
         printf("Your Choice : ");
         scanf("%d", &choice);
         fflush(stdin);
@@ -75,6 +83,10 @@ int main(){
             root = delete(root, data);
             break;
         case 5:
+            height = findHeight(root);
+            printf("\n\n Height of Tree is %d \n\n", height);
+            break;
+        case 6:
             exit(1);
         default:
             printf("------> Enter correct choice\n");
@@ -241,4 +253,16 @@ BstNode *findMin(BstNode *root){
     }
 
     return findMin(root->left);
+}
+
+int max(int a, int b){
+    return ((a > b)?a:b);
+}
+
+int findHeight(BstNode* root){
+    if(root == NULL){
+        return -1;
+    }
+
+    return max(findHeight(root->right), findHeight(root->left)) + 1;
 }

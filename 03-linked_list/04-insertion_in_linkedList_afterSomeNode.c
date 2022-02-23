@@ -47,36 +47,66 @@ node *getnode(){
     return newNode;
 }
 
+
 void insert(){
-    int ele;
+    int ele, key;
+    printf("Enter position : ");
+    scanf("%d", &key);
+
+    fflush(stdin);
+
     printf("Enter data : ");
     scanf("%d", &ele);
-    // fflush(stdin);
 
     node *new = getnode();
     new->data = ele;
     new->next = NULL;
 
-    if(head == NULL){
+    if(key == 1){
+        new->next = head;
         head = new;
-        printf("First Node Inserted\n");
     }
     else{
-        int key;
         node *prev = head;
-        node *temp = head->next; 
-        printf("Enter Key : ");
-        scanf("%d", &key);
-        while(prev->data != key){
-            prev = temp;
-            temp = temp->next;
+        int count = 1;
+        while(count < key - 1){
+            prev = prev->next;
+            count++;
         }
-
+        new->next = prev->next;
         prev->next = new;
-        new->next = temp;
-
-        printf("Node Inserted Succesfully\n");
     }
-    
-
 }
+
+// void insert(){
+//     int ele;
+//     printf("Enter data : ");
+//     scanf("%d", &ele);
+//     // fflush(stdin);
+
+//     node *new = getnode();
+//     new->data = ele;
+//     new->next = NULL;
+
+//     if(head == NULL){
+//         head = new;
+//         printf("First Node Inserted\n");
+//     }
+//     else{
+//         int key;
+//         node *prev = head;
+//         node *temp = head->next; 
+//         printf("Enter Key : ");
+//         scanf("%d", &key);
+//         while(prev->data != key){
+//             prev = temp;
+//             temp = temp->next;
+//         }
+
+//         prev->next = new;
+//         new->next = temp;
+
+//         printf("Node Inserted Succesfully\n");
+//     }
+    
+// }
