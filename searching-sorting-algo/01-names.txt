@@ -1,0 +1,11 @@
+1.Linear search
+2.Binary search
+
+3.Bubble sort
+4.Insertion sort
+5.Selection sort
+6.Merge sort
+7.Quick sort
+8.Heap sort
+9.Hashing
+10.Collision resolution
