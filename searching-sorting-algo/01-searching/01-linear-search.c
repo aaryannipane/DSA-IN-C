@@ -25,7 +25,7 @@ int linearSearch(int array[], int n, int x){
 int main(){
 
     int ARRAY[5] = {1, 3, 5, 12, 60};
-    int x = 12;
+    int x = 120;
     // length of array 
     int n = sizeof(ARRAY) / sizeof(ARRAY[0]);
 
